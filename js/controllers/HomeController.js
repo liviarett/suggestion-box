@@ -5,7 +5,6 @@ app.controller('HomeController', ['$scope', 'suggestions', function($scope, sugg
 		if(!$scope.title || $scope.title === "") {
 			return;
 		} 
-		console.log($scope.title);
 		//push suggestion posts in suggestions.js
 		$scope.posts.push({
 			title: $scope.title,
@@ -14,7 +13,6 @@ app.controller('HomeController', ['$scope', 'suggestions', function($scope, sugg
 		});
 		//after submit, clear input
 		$scope.title = "";
-		console.log($scope.posts);
 	};
 	$scope.upVote = function(post) {
 		post.upvotes = post.upvotes + 1;
