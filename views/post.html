@@ -1,10 +1,19 @@
+<p class="title-comment-page"><a class="back" href="#/">&#171;</a>{{ post.title }}</p>
 <div class="main">
-	<p>{{ post.title }}</p>
-
-<div ng-repeat="comment in post.comments">
-<p>{{ comment.body }}</p>
+<div class="comment" ng-repeat="comment in post.comments">
+<p class="comment-body">&#34;{{ comment.body }}&#34;</p>
 	<p>
 	<span class="glyphicon glyphicon-plus-sign" ng-click="upVote(comment)"></span> Upvotes: {{ comment.upvotes }}
 	</p>
 </div>
+</div>
+<div class="submit-comment">
+	<form ng-submit="addComment()">
+		<h3>Submit Your Comment</h3>
+		<div class="form-group">
+		<input type="text" class="form-control" placeholder="Great ideas here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Great ideas here'"
+ng-model="body">
+		</div>
+		<button type="submit" class="btn btn-primary">Comment</button>
+	</form>
 </div>
