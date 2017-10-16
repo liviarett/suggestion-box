@@ -8,7 +8,9 @@ return;
 		$scope.post.comments.push({
 			body: $scope.body,
 			upvotes: 0
-		})
+		});
+		//after submit, clear input
+		$scope.body = "";
 	}
 	
 	$scope.upVote = function(comment) {		comment.upvotes = comment.upvotes + 1;
